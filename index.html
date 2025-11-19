@@ -173,11 +173,64 @@ footer.site-footer {
   gap: 1rem;
   align-items: start;
 }
+
+/* About 內部元件 */
+.about-content {
+  display: flow-root;
+}
+
+.about-content p {
+  margin: 0 0 0.9rem 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.about-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary), #0e66a3);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  filter: brightness(1.02);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: rgba(255,255,255,0.05);
+}
+
+/* 圖片區塊 */
 .about-figure {
   border-radius: 10px;
   overflow: hidden;
   background: rgba(255,255,255,0.02);
 }
+
+/* 小螢幕時讓圖片置於內容下方（grid already single column） */
 /* CSS:ABOUT-END */
 
 /* CSS:SKILLS-START */
@@ -249,9 +302,11 @@ footer.site-footer {
     gap: 2rem;
   }
 
+  /* About 兩欄：左文右圖 */
   .about-grid {
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 420px;
     gap: 2rem;
+    align-items: center;
   }
 
   .project-grid {
@@ -308,8 +363,8 @@ footer.site-footer {
 
       <div class="hero-illustration" aria-hidden="false">
         <img
-          src="https://source.unsplash.com/800x600/?developer,laptop,workspace"
-          alt="在筆電前撰寫程式碼的前端開發者"
+          src="https://source.unsplash.com/800x600/?skateboarder,skateboard,street"
+          alt="在街道上滑滑板的一位個人，日常生活感的瞬間"
           loading="lazy"
         />
       </div>
@@ -320,20 +375,25 @@ footer.site-footer {
   <!-- SECTION:ABOUT-START -->
   <section id="about" class="section section-about" aria-labelledby="about-heading">
     <div class="container about-grid">
-      <div>
-        <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-        <p>
-          這裡目前是 About 區的占位內容，說明未來會放置更完整的個人介紹、工作經歷與設計/開發理念。
-        </p>
-        <p>
+      <div class="about-content">
+        <h2 id="about-heading" class="section-title">關於我</h2>
+        <p>我現在是一名幼教教師，日常工作以幼兒教學與課程設計為主，重視孩童的學習步調與情感支持。</p>
+        <p>私底下喜歡彈吉他與滑滑板，如果有一天財務自由，我想到處 longstay 體驗不同文化與生活方式。</p>
+
+        <div class="about-actions">
+          <a class="btn-primary" href="#projects">查看作品集</a>
+          <a class="btn-secondary" href="#contact">聯絡我</a>
+        </div>
+
+        <p style="margin-top:0.85rem; color: var(--muted); font-size:0.92rem;">
           （開發者提示：之後會用 Section SDD 的 Prompt 產生新的 section，請把新的 section 程式碼整段貼在這兩個註解中間，完全取代現在這一區。）
         </p>
       </div>
 
       <aside class="about-figure" aria-hidden="false">
         <img
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-          alt="工作桌上有筆電與筆記本的辦公場景"
+          src="https://source.unsplash.com/1000x800/?skateboarding,person,street"
+          alt="一人在街道上滑滑板的生活感照片"
           loading="lazy"
         />
       </aside>
@@ -413,3 +473,7 @@ footer.site-footer {
     <p>© <span aria-hidden="true">2025</span> Your Name · Frontend Dev — 以 HTML + CSS 建構的個人品牌網站骨架。</p>
   </div>
 </footer>
+
+</div>
+</body>
+</html>
